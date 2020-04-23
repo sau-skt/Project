@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "596891555083",
+    "firebase_url": "https://hagoclone-d1a58.firebaseio.com",
+    "project_id": "hagoclone-d1a58",
+    "storage_bucket": "hagoclone-d1a58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596891555083:android:2b87dc61fe7038ed507e0e",
+        "android_client_info": {
+          "package_name": "appdev.com.hagoclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596891555083-oqggsjk75q8ts868vskf3r99dj3bvtn6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNrKgUmMEQGIJ9dDMwwPS9fcL6OOhTVoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596891555083-oqggsjk75q8ts868vskf3r99dj3bvtn6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
