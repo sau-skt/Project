@@ -40,4 +40,7 @@ dependencies {
 
     //Badge for Bottom Navigation
     implementation 'com.github.ammarptn:bottomNavBadge:1.0.3'
+
+    //Circular Image View
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

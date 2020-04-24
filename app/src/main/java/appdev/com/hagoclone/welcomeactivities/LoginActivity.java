@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 DatabaseReference userdetailsempty = FirebaseDatabase.getInstance().getReference().child("UsersData").child(userno);
                 userdetailsempty.updateChildren(userdetails);
-                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(i);
                 overridePendingTransition(0, 0);
                 finish();
