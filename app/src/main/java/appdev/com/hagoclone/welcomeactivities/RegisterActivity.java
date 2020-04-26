@@ -10,13 +10,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import appdev.com.hagoclone.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
     //Vars for widgets
-    private EditText name,dob,gender;
+    private EditText name, dob;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         WidgetsRegister();
         DatePick();
+    }
+
+    public void checkButton(View view){
+        int radioId = radioGroup.getCheckedRadioButtonId();
+        radioButton = findViewById(radioId);
+
+        Toast.makeText(this, radioButton.getText(), Toast.LENGTH_SHORT).show();
     }
 
     private DatePickerDialog picker;
@@ -54,6 +66,6 @@ public class RegisterActivity extends AppCompatActivity {
     private void WidgetsRegister() {
         name = findViewById(R.id.regusername);
         dob = findViewById(R.id.regdob);
-        gender = findViewById(R.id.reggender);
+        radioGroup = findViewById(R.id.radioGroup);
     }
 }
