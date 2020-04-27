@@ -97,14 +97,14 @@ public class LoginActivity extends AppCompatActivity {
                 //Details to be filled in firebase database during login
 
                 userdetails.put("Uid",FirebaseAuth.getInstance().getCurrentUser().getUid());
-                userdetails.put("Nickname",FirebaseAuth.getInstance().getCurrentUser().getUid());
-                userdetails.put("Birthday",FirebaseAuth.getInstance().getCurrentUser().getUid());
+                userdetails.put("Nickname","");
+                userdetails.put("Birthday","");
                 userdetails.put("Gender","Male");
-                userdetails.put("Profession",FirebaseAuth.getInstance().getCurrentUser().getUid());
-                userdetails.put("Hometown",FirebaseAuth.getInstance().getCurrentUser().getUid());
-                userdetails.put("Bio",FirebaseAuth.getInstance().getCurrentUser().getUid());
-                userdetails.put("Diamonds",FirebaseAuth.getInstance().getCurrentUser().getUid());
-                userdetails.put("MobileNumber",FirebaseAuth.getInstance().getCurrentUser().getUid());
+                userdetails.put("Profession","");
+                userdetails.put("Hometown","");
+                userdetails.put("Bio","");
+                userdetails.put("Diamonds","");
+                userdetails.put("MobileNumber","");
 
                 DatabaseReference userdetailsempty = FirebaseDatabase.getInstance().getReference().child("UsersData").child(userno);
                 userdetailsempty.updateChildren(userdetails);
