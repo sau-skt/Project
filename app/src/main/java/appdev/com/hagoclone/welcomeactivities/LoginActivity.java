@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                 userdetails.put("Uid",FirebaseAuth.getInstance().getCurrentUser().getUid());
                 userdetails.put("Nickname",FirebaseAuth.getInstance().getCurrentUser().getUid());
                 userdetails.put("Birthday",FirebaseAuth.getInstance().getCurrentUser().getUid());
-                userdetails.put("Gender",FirebaseAuth.getInstance().getCurrentUser().getUid());
+                userdetails.put("Gender","Male");
                 userdetails.put("Profession",FirebaseAuth.getInstance().getCurrentUser().getUid());
                 userdetails.put("Hometown",FirebaseAuth.getInstance().getCurrentUser().getUid());
                 userdetails.put("Bio",FirebaseAuth.getInstance().getCurrentUser().getUid());

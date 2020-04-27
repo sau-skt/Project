@@ -1,5 +1,6 @@
 package appdev.com.hagoclone.welcomeactivities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -14,6 +15,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import appdev.com.hagoclone.R;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -22,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText name, dob;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
+    private Button submitbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +42,28 @@ public class RegisterActivity extends AppCompatActivity {
 
         WidgetsRegister();
         DatePick();
+
+        submitbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UpdateDatabase();
+            }
+        });
+    }
+
+    private void UpdateDatabase() {
+        final DatabaseReference assignuserid = FirebaseDatabase.getInstance().getReference().child("AssignUserId").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        assignuserid.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String userno = dataSnapshot.getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void checkButton(View view){
@@ -67,5 +101,6 @@ public class RegisterActivity extends AppCompatActivity {
         name = findViewById(R.id.regusername);
         dob = findViewById(R.id.regdob);
         radioGroup = findViewById(R.id.radioGroup);
+        submitbutton = findViewById(R.id.submit_button);
     }
 }
