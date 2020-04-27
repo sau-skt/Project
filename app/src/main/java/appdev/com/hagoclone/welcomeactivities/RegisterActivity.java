@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.text.InputType;
@@ -25,6 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 
+import appdev.com.hagoclone.HomeActivity;
 import appdev.com.hagoclone.R;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -51,6 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else {
                     UpdateDatabase();
+
                 }
             }
         });
@@ -72,13 +75,31 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
+
+        Intent i = new Intent(RegisterActivity.this, HomeActivity.class);
+        startActivity(i);
+        overridePendingTransition(0, 0);
+        finish();
     }
 
     public void checkButton(View view){
         int radioId = radioGroup.getCheckedRadioButtonId();
         radioButton = findViewById(radioId);
 
-        Toast.makeText(this, radioButton.getText(), Toast.LENGTH_SHORT).show();
+        final DatabaseReference assignuserid = FirebaseDatabase.getInstance().getReference().child("AssignUserId").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        assignuserid.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String userno = dataSnapshot.getValue().toString();
+                DatabaseReference userdetailsempty = FirebaseDatabase.getInstance().getReference().child("UsersData").child(userno);
+                userdetailsempty.child("Gender").setValue(radioButton.getText().toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private DatePickerDialog picker;

@@ -48,7 +48,7 @@
             android:id="@+id/radio_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Male"
+            android:text="Male"
             android:onClick="checkButton"
             android:checked="true"/>
 
@@ -56,7 +56,7 @@
             android:id="@+id/radio_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   Female"
+            android:text="Female"
             android:layout_marginLeft="60dp"
             android:onClick="checkButton"/>
 
