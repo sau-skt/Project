@@ -46,7 +46,12 @@ public class RegisterActivity extends AppCompatActivity {
         submitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UpdateDatabase();
+                if (name.getText().toString().equals("") || dob.getText().toString().equals("") ){
+                    Toast.makeText(RegisterActivity.this, "Please fill the details", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    UpdateDatabase();
+                }
             }
         });
     }
@@ -57,6 +62,9 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String userno = dataSnapshot.getValue().toString();
+                DatabaseReference userdetailsempty = FirebaseDatabase.getInstance().getReference().child("UsersData").child(userno);
+                userdetailsempty.child("Nickname").setValue(name.getText().toString());
+                userdetailsempty.child("Birthday").setValue(dob.getText().toString());
             }
 
             @Override
