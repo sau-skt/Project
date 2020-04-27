@@ -11,14 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".welcomeactivities.RegisterActivity"></activity>
+        <activity android:name=".welcomeactivities.RegisterActivity"
+            android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/HomeTheme" />
-        <activity android:name=".welcomeactivities.LoginActivity" />
+            android:theme="@style/HomeTheme"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".welcomeactivities.LoginActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".welcomeactivities.SplashActivity"
-            android:theme="@style/WelcomeTheme">
+            android:theme="@style/WelcomeTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
