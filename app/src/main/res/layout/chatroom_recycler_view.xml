@@ -7,4 +7,16 @@
     android:layout_margin="10dp"
     app:cardCornerRadius="15dp">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="35dp"
+        android:background="@drawable/backgroundone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chatroomname"
+        android:layout_marginTop="40dp"/>
+
 </androidx.cardview.widget.CardView>
