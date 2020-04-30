@@ -23,7 +23,6 @@ public class GamesAndChatroomFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_games_and_chatroom,container,false);
 
         reminderRV = view.findViewById(R.id.reminderrecyclerview);
-
         return view;
     }
 }
